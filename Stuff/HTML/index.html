@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="wpoceans">
+    <title>Ruhaan</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="jQuery-plugin-progressbar.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.0.1/progressbar.min.js"></script>
+    <link rel="stylesheet" href="Ruhaan.css" type="text/css" media="all">
+    <link rel="stylesheet" href="home.css" type="text/css" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.0/progressbar.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;900&display=swap" rel="stylesheet">
+
+
+    <!--CHATBOT FILES-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="responsive.css">
+
+    <!-- ChatBot -->
+    <link rel="stylesheet" type="text/css" href="jquery.convform.css">
+    <script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="jquery.convform.js"></script>
+    <script type="text/javascript" src="custom.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body style="background-color:#b9d5fd; font-family:Garamond">
+    <!-- <header> -->
+    <div class="topnav fixed-top" id="myTopnav">
+        <a href="index.html" class="active"><img src="Ruhaanlogo1.png" width=40px height=40px></a>
+        <a href="about.html">About</a>
+        <a href="club.html">Clubs</a>
+        <a href="children.html">Children</a>
+        <a href="blog.html">Blog</a>
+        <a href="login.html">Login/Register</a>
+        <a href="contactus.html">Contact Us</a>
+        <div id="myOverlay" class="overlay">
+            <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+            <div class="overlay-content">
+                <form action="/action_page.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+        <button class="openBtn" onclick="openSearch()">Open Search Box</button>
+        <a href="javascript:void(0);" class="icon" onclick="NavFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+
+    <!--  <a href="javascript:void(0);" class="icon" onclick="NavFunction()">
+                <i class="fa fa-bars"></i>
+            </a> -->
+    <script>
+        function NavFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav fixed-top") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav fixed-top";
+            }
+        }
+    </script>
+
+
+
+    <div class="header">
+
+        <!--  <div class="progress-container">-->
+        <div class="progress-bar" id="myBar"></div>
+    </div>
+    <!--</div>-->
+    </header>
+    <br><br>
+    <div class="container text-white">
+        <br><br>
+    </div>
+
+
+    <div class="content">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div id="mySidenav" class="sidenav">
+                        <a href="club.html" id="about">Join As a Club</a>
+                        <a href="children.html" id="blog">Help Children</a>
+                        <a href="contactus.html" id="projects">Make Donations</a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-9">
+                    <div class="container mt-3">
+                        <div class="examples">
+                            <img src="1.jpg" height="500" />
+                            <div class="contents">
+                                <div class="texts" style="font-family: monospace; font-weight: 10px; font-size: 100px;">RUHAAN</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card" style="width:350px" id="card1">
+                        <img class="card-img-top" src="homemission.jpg" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title-center" style="color:white;">MISSION</h4>
+                            <center>
+                                <a href="about.html" style="background-color: #b9d5fd                                ;" class="btn stretched-link">View More</a></center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card" style="width:350px" id="card2">
+                        <img class="card-img-top" src="homesupport.jpg" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title-center" style="color:white;">SUPPORT</h4>
+                            <center>
+                                <a style="background-color: #b9d5fd                                ;" href="contactus.html" class="btn stretched-link">View More</a></center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card" style="width:350px" id="card3">
+                        <img class="card-img-top" src="homeclubs.jpg" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title-center" style="color:white;">CLUBS</h4>
+                            <center>
+                                <a style="background-color: #b9d5fd                                ;" href="club.html" class="btn stretched-link">View More</a></center>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="container bg-light">
+            <div class="row">
+                <div class="col-sm-4" style="background-color:#709fdc                ">
+                    <img src="kidsreached.jpg" alt="kids reached" width="100%" height="100%" style="border: 7px solid #709fdc                    ">
+                </div>
+                <div class="col-sm-4" style="background-color:#709fdc ; color:white;               ">
+                    <center>
+                        <br>
+                        <h1>KIDS REACHED</h1>
+                        <p>The total percentage of underpriviledged kids who have been helped by the welfare clubs and community service clubs.</p>
+                    </center>
+                </div>
+                <div class="col-sm-4" class="box" style="background-color:#709fdc                ">
+
+
+                    <center>
+                        <div id="containerCircle"></div>
+                    </center>
+                    <script>
+                        var bar = new ProgressBar.Circle(containerCircle, {
+                            color: '#255d83',
+                            // This has to be the same size as the maximum width to
+                            // prevent clipping
+                            strokeWidth: 4,
+                            trailWidth: 1,
+                            easing: 'easeInOut',
+                            duration: 1400,
+                            text: {
+                                autoStyleContainer: false
+                            },
+                            from: {
+                                color: '#709fdc',
+                                width: 1
+                            },
+                            to: {
+                                color: '#071739',
+                                width: 4
+                            },
+                            // Set default step function for all animate calls
+                            step: function(state, circle) {
+                                circle.path.setAttribute('stroke', state.color);
+                                circle.path.setAttribute('stroke-width', state.width);
+
+                                var value = Math.round(circle.value() * 100);
+                                if (value === 0) {
+                                    circle.setText('');
+                                } else {
+                                    circle.setText(value);
+                                }
+
+                            }
+                        });
+                        bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+                        bar.text.style.fontSize = '2rem';
+
+                        bar.animate(0.7); // Number from 0.0 to 1.0
+                    </script>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <br><br>
+        <div class="container bg-light">
+            <div class="row">
+                <div class="col-sm-4" style="background-color:#274684                ">
+                    <img src="1.jpg" alt="kids reached" width="100%" height="100%" style="border: 7px solid #274684                    ">
+                </div>
+                <div class="col-sm-4" style="background-color:#274684;color:white;             ">
+                    <br>
+                    <center>
+                        <h1> EVENTS CONDUCTED</h1>
+                        <p>
+                            Total percentage of food drives, cloth donation drives and education fairs conducted by the clubs in slum areas.
+                        </p>
+
+                    </center>
+                </div>
+                <div class="col-sm-4" class="box" style="background-color:#274684                ">
+
+
+                    <center>
+                        <div id="containerCircle1"></div>
+                    </center>
+                    <script>
+                        var bar = new ProgressBar.Circle(containerCircle1, {
+                            color: '#071739',
+                            // This has to be the same size as the maximum width to
+                            // prevent clipping
+                            strokeWidth: 4,
+                            trailWidth: 1,
+                            easing: 'easeInOut',
+                            duration: 1400,
+                            text: {
+                                autoStyleContainer: false
+                            },
+                            from: {
+                                color: '#274684',
+                                width: 1
+                            },
+                            to: {
+                                color: '#071739',
+                                width: 4
+                            },
+                            // Set default step function for all animate calls
+                            step: function(state, circle) {
+                                circle.path.setAttribute('stroke', state.color);
+                                circle.path.setAttribute('stroke-width', state.width);
+
+                                var value = Math.round(circle.value() * 100);
+                                if (value === 0) {
+                                    circle.setText('');
+                                } else {
+                                    circle.setText(value);
+                                }
+
+                            }
+                        });
+                        bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+                        bar.text.style.fontSize = '2rem';
+
+                        bar.animate(0.85); // Number from 0.0 to 1.0
+                    </script>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <br><br>
+
+
+        <center>
+            <h1 style="color:#071739            ">Photo Gallery of Events</h1>
+        </center>
+        <div class="row">
+            <div class="column">
+                <img src="1.jpg" style="width:100%">
+                <img src="2.jpg" style="width:100%">
+
+            </div>
+            <div class="column">
+                <img src="3.jpg" style="width:100%">
+                <img src="4.jpg" style="width:100%">
+
+            </div>
+            <div class="column">
+                <img src="5.jpg" style="width:100%">
+                <img src="6.jpg" style="width:100%">
+
+            </div>
+            <div class="column">
+                <img src="1.jpg" style="width:100%">
+                <img src="2.jpg" style="width:100%">
+
+            </div>
+        </div>
+        <br><br>
+
+        <!--COUNTER-->
+        <div class="containerCounter">
+            <div class="counter-container">
+                <div class="counter">
+                    <i class="bi bi-diagram-3-fill" id="icon"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" color="#071739  " fill="currentColor" class="bi bi-diagram-3-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-6 8A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5v-1zm6 0A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1z"/>
+                      </svg>
+                    <h3 data-target="200" style="color:#071739;" class="count">0</h3>
+                    <h6 style="color:#274684;">Clubs Registered</h6>
+                </div>
+                <div class="counter">
+                    <i class="bi bi-people-fill"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" color="#071739  " fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                    <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+                    <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                  </svg>
+                    <h3 data-target="1000" style="color:#071739;" class="count">0</h3>
+                    <h6 style="color:#274684;">Kids Reached</h6>
+                </div>
+                <div class="counter">
+                    <i class="bi bi-piggy-bank"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" color="#071739" fill="currentColor" class="bi bi-piggy-bank" viewBox="0 0 16 16">
+                    <path d="M5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm1.138-1.496A6.613 6.613 0 0 1 7.964 4.5c.666 0 1.303.097 1.893.273a.5.5 0 0 0 .286-.958A7.602 7.602 0 0 0 7.964 3.5c-.734 0-1.441.103-2.102.292a.5.5 0 1 0 .276.962z"/>
+                    <path fill-rule="evenodd" d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069c0-.145-.007-.29-.02-.431.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a.95.95 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.735.735 0 0 0-.375.562c-.024.243.082.48.32.654a2.112 2.112 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595zM2.516 6.26c.455-2.066 2.667-3.733 5.448-3.733 3.146 0 5.536 2.114 5.536 4.542 0 1.254-.624 2.41-1.67 3.248a.5.5 0 0 0-.165.535l.66 2.175h-.985l-.59-1.487a.5.5 0 0 0-.629-.288c-.661.23-1.39.359-2.157.359a6.558 6.558 0 0 1-2.157-.359.5.5 0 0 0-.635.304l-.525 1.471h-.979l.633-2.15a.5.5 0 0 0-.17-.534 4.649 4.649 0 0 1-1.284-1.541.5.5 0 0 0-.446-.275h-.56a.5.5 0 0 1-.492-.414l-.254-1.46h.933a.5.5 0 0 0 .488-.393zm12.621-.857a.565.565 0 0 1-.098.21.704.704 0 0 1-.044-.025c-.146-.09-.157-.175-.152-.223a.236.236 0 0 1 .117-.173c.049-.027.08-.021.113.012a.202.202 0 0 1 .064.199z"/>
+                  </svg>
+                    <h3 data-target="5000" style="color:#071739;" class="count">0</h3>
+                    <h6 style="color:#274684;">Funds Generated</h6>
+                </div>
+            </div>
+        </div>
+        <script>
+            const counters = document.querySelectorAll(".count");
+            const speed = 200;
+
+            counters.forEach((counter) => {
+                const updateCount = () => {
+                    const target = parseInt(+counter.getAttribute("data-target"));
+                    const count = parseInt(+counter.innerText);
+                    const increment = Math.trunc(target / speed);
+                    console.log(increment);
+
+                    if (count < target) {
+                        counter.innerText = count + increment;
+                        setTimeout(updateCount, 1);
+                    } else {
+                        count.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        </script>
+
+
+        <br><br>
+        <section class="news-letter-section">
+            <div class="container">
+                <div class="news-letter-wrap">
+                    <div class="row">
+                        <div class="col col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-2">
+                            <div class="newsletter" style="color:white; ">
+                                <center>
+                                    <h3>Subscribe to our Newsletter</h3>
+                                    <p>Keep yourself updated with all the new activities on Ruhaan.</p>
+                                </center>
+                                <div class="newsletter-form">
+                                    <form>
+                                        <div>
+                                            <input type="text" placeholder="Enter Your Email" class="form-control">
+                                            <button class="bigCursor" type="submit">Subscribe</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end container -->
+        </section>
+        <br><br>
+        <div class="tp-ne-footer">
+
+            <footer class="tp-site-footer">
+                <div class="tp-upper-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-lg-3 col-md-3 col-sm-6">
+                                <div class="widget about-widget">
+                                    <div class="logo widget-title">
+                                        <img src="Ruhaanlogo1.png" alt="blog">
+                                    </div>
+                                    <p>Connecting Clubs with Children for Society Welfare. </p>
+                                    <ul>
+                                        <li>
+                                        </li>
+                                        <li>
+                                            <div class="parallax-wrap">
+                                                <div class="parallax-element">
+                                                    <a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+</svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="parallax-wrap">
+                                                <div class="parallax-element">
+                                                    <a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+<path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+</svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="parallax-wrap">
+                                                <div class="parallax-element">
+                                                    <a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+<path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+</svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col col-lg-2 col-md-3 col-sm-6">
+                                <div class="widget link-widget">
+                                    <div class="widget-title">
+                                        <h3>Useful Links</h3>
+                                    </div>
+                                    <ul>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="club.html">Clubs</a></li>
+                                        <li><a href="children.html">Children</a></li>
+                                        <li><a href="blog.html">Blogs</a></li>
+                                        <li><a href="contactus.html">Contact Us</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col col-lg-3 col-lg-offset-1 col-md-3 col-sm-6">
+                                <div class="widget market-widget tp-service-link-widget">
+                                    <div class="widget-title">
+                                        <h3>Contact </h3>
+                                    </div>
+                                    <p>Looking forward to be a change maker.</p>
+                                    <div class="contact-ft">
+                                        <ul>
+                                            <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+<path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+<path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+</svg>
+                                                <i style="font-size:22px"></i> Delhi</li>
+                                            <!-- <li><i class="fi flaticon-call"></i></li>-->
+                                            <li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+<path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+</svg>
+                                                <i style="font-size:22px"></i> xyz@gmail.com</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-lg-3 col-md-3 col-sm-6">
+                                <div class="widget instagram">
+                                    <div class="widget-title">
+                                        <h3>Instagram</h3>
+                                    </div>
+                                    <ul class="d-flex">
+                                        <li>
+                                            <a href="#"><img src="6.jpg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img src="5.jpg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img src="4.jpg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img src="3.jpg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img src="2.jpg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img src="1.jpg" alt=""></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end container -->
+                </div>
+                <div class="tp-lower-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-xs-12">
+                                <p class="copyright">&copy; 2021 Ruhaan Foundation. All rights reserved</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+        // When the user scrolls the page, execute myFunction 
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+
+    <div class="chat_icon">
+        <i class="fa fa-comments" aria-hidden="true"></i>
+    </div>
+
+    <div class="chat_box">
+        <div class="my-conv-form-wrapper">
+            <form action="" method="GET" class="hidden">
+
+                <!--choice between CLUB AND CHILDREN-->
+                <select data-conv-question="What do you want to know about?" name="category">
+                <option value="Club">Club</option>
+                <option value="Children">Children</option>
+                </select>
+
+                <!--on choosing CLUBS-->
+                <div data-conv-fork="category">
+                    <div data-conv-case="Club">
+                        <select data-conv-question="Did you visit our clubs page?" name="choice">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+
+                    <!--on choosing CHILDREN-->
+                    <div data-conv-case="Children">
+                        <select data-conv-question="Did you visit our childrens page?" name="choice1">
+                                    <option value="Yes1">Yes</option>
+                                    <option value="No1">No</option>
+                                </select>
+                    </div>
+                </div>
+
+                <!--on choosing YES for CLUBS VISITED-->
+                <div data-conv-fork="choice">
+                    <div data-conv-case="Yes">
+                        <select data-conv-question="Which club details do you want to know?" name="ClubName">
+                                    <option value="Umeed">UMEED</option>
+                                    <option value="Inaayat">INAAYAT</option>
+                                    <option value="cdf">CDF</option>
+                                </select>
+                    </div>
+
+
+                    <!--on choosing NO for CLUBS VISITED-->
+
+                    <div data-conv-case="No">
+                        <input type="text" data-conv-question="Go to our HOME page-> Click on CLUBS tab to explore!" data-no-answer="true">
+                        <select data-conv-question="Please click OK to proceed">
+                                            <option value="Yes">OK</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!--on choosing YES for CHILDREN VISITED-->
+                <div data-conv-fork="choice1">
+                    <div data-conv-case="Yes1">
+                        <select data-conv-question="How do you want to help?" name="Help">
+                                    <option value="donate">MAKE DONATION</option>
+                                    <option value="clubjoin">JOIN A CLUB</option>
+                        </select>
+                    </div>
+
+
+                    <!--on choosing NO for CHILDREN VISITED-->
+
+                    <div data-conv-case="No1">
+                        <input type="text" data-conv-question="Go to our HOME page-> Click on CHILDRENS tab to explore!" data-no-answer="true">
+                        <select data-conv-question="Please click OK to proceed">
+                                            <option value="Yes">OK</option>
+                                          </select>
+                    </div>
+                </div>
+
+                <!--UMEED CLUB-->
+                <div data-conv-fork="ClubName">
+                    <div data-conv-case="Umeed">
+                        <input type="text" data-conv-question="UMEED is a children welfare club aimed at benefitting the underprivilidged kids." data-no-answer="true">
+                        <select data-conv-question="Do you want more info?" name="Info">
+                                    <option value="want">Yes</option>
+                                    <option value="dont">No</option>
+                                </select>
+                    </div>
+
+
+                    <!--INAAYAT CLUB-->
+
+                    <div data-conv-case="Inaayat">
+                        <input type="text" data-conv-question="INAAYAT is a children welfare club aimed at benefitting the underprivilidged kids." data-no-answer="true">
+                        <select data-conv-question="Do you want more info?" name="Info">
+                                    <option value="want">Yes</option>
+                                    <option value="dont">No</option>
+                                </select>
+                    </div>
+
+
+                    <!--CDF CLUB-->
+                    <div data-conv-case="cdf">
+                        <input type="text" data-conv-question="CDF is a children welfare club aimed at benefitting the underprivilidged kids." data-no-answer="true">
+                        <select data-conv-question="Do you want more info?" name="Info">
+                                    <option value="want">Yes</option>
+                                    <option value="dont">No</option>
+                                </select>
+                    </div>
+                </div>
+
+                <!--MAKE DONATION-->
+                <div data-conv-fork="Help">
+                    <div data-conv-case="donate">
+                        <input type="text" data-conv-question="Go to our HOME page-> Click on CONTACTS tab to make donation!" data-no-answer="true">
+                        <select data-conv-question="Please click OK to proceed">
+                                            <option value="Yes">OK</option>
+                        </select>
+                    </div>
+
+
+                    <!--CLUB JOIN-->
+
+                    <div data-conv-case="clubjoin">
+                        <input type="text" data-conv-question="Go to our HOME page-> Click on CLUBS tab to explore and join!" data-no-answer="true">
+                        <select data-conv-question="Please click OK to proceed">
+                            <option value="Yes">OK</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div data-conv-fork="Info">
+                    <div data-conv-case="want">
+                        <input data-conv-question="Enter your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="email" name="email" required placeholder="What's your e-mail?">
+                        <select data-conv-question="We will send more details to {email}">
+                                            <option value="Yes">OK</option>
+                        </select>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script>
+        function openSearch() {
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function closeSearch() {
+            document.getElementById("myOverlay").style.display = "none";
+        }
+    </script>
+    <script src="home.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<div class="chat_icon">
+    <i class="fa fa-comments" aria-hidden="true"></i>
+</div>
+
+<div class="chat_box">
+    <div class="my-conv-form-wrapper">
+        <form action="" method="GET" class="hidden">
+
+            <!--choice between CLUB AND CHILDREN-->
+            <select data-conv-question="What do you want to know about?" name="category">
+            <option value="Club">Club</option>
+            <option value="Children">Children</option>
+            </select>
+
+            <!--on choosing CLUBS-->
+            <div data-conv-fork="category">
+                <div data-conv-case="Club">
+                    <select data-conv-question="Did you visit our clubs page?" name="choice">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <!--on choosing CHILDREN-->
+                <div data-conv-case="Children">
+                    <select data-conv-question="Did you visit our childrens page?" name="choice1">
+                                <option value="Yes1">Yes</option>
+                                <option value="No1">No</option>
+                            </select>
+                </div>
+            </div>
+
+            <!--on choosing YES for CLUBS VISITED-->
+            <div data-conv-fork="choice">
+                <div data-conv-case="Yes">
+                    <select data-conv-question="Which club details do you want to know?" name="ClubName">
+                                <option value="Umeed">UMEED</option>
+                                <option value="Inaayat">INAAYAT</option>
+                                <option value="cdf">CDF</option>
+                            </select>
+                </div>
+
+
+                <!--on choosing NO for CLUBS VISITED-->
+
+                <div data-conv-case="No">
+                    <input type="text" data-conv-question="Go to our HOME page-> Click on CLUBS tab to explore!" data-no-answer="true">
+                    <select data-conv-question="Please click OK to proceed">
+                                        <option value="Yes">OK</option>
+                                      </select>
+                </div>
+            </div>
+
+            <!--on choosing YES for CHILDREN VISITED-->
+            <div data-conv-fork="choice1">
+                <div data-conv-case="Yes1">
+                    <select data-conv-question="How do you want to help?" name="Help">
+                                <option value="donate">MAKE DONATION</option>
+                                <option value="clubjoin">JOIN A CLUB</option>
+                            </select>
+                </div>
+
+
+                <!--on choosing NO for CHILDREN VISITED-->
+
+                <div data-conv-case="No1">
+                    <input type="text" data-conv-question="Go to our HOME page-> Click on CHILDRENS tab to explore!" data-no-answer="true">
+                    <select data-conv-question="Please click OK to proceed">
+                                        <option value="Yes">OK</option>
+                                      </select>
+                </div>
+            </div>
+
+            <!--UMEED CLUB-->
+            <div data-conv-fork="ClubName">
+                <div data-conv-case="Umeed">
+                    <input type="text" data-conv-question="UMEED is a children welfare club aimed at benefitting the underprivilidged kids." data-no-answer="true">
+                    <select data-conv-question="Do you want more info?" name="Info">
+                                <option value="want">Yes</option>
+                                <option value="dont">No</option>
+                            </select>
+                </div>
+
+
+                <!--INAAYAT CLUB-->
+
+                <div data-conv-case="Inaayat">
+                    <input type="text" data-conv-question="INAAYAT is a children welfare club aimed at benefitting the underprivilidged kids." data-no-answer="true">
+                    <select data-conv-question="Do you want more info?" name="Info">
+                                <option value="want">Yes</option>
+                                <option value="dont">No</option>
+                            </select>
+                </div>
+
+
+                <!--CDF CLUB-->
+                <div data-conv-case="cdf">
+                    <input type="text" data-conv-question="CDF is a children welfare club aimed at benefitting the underprivilidged kids." data-no-answer="true">
+                    <select data-conv-question="Do you want more info?" name="Info">
+                                <option value="want">Yes</option>
+                                <option value="dont">No</option>
+                            </select>
+                </div>
+            </div>
+
+            <!--MAKE DONATION-->
+            <div data-conv-fork="help">
+                <div data-conv-case="donate">
+                    <input type="text" data-conv-question="Go to our HOME page-> Click on CONTACTS tab to make donation!" data-no-answer="true">
+                    <select data-conv-question="Please click OK to proceed">
+                                        <option value="Yes">OK</option>
+                                      </select>
+                </div>
+
+
+                <!--CLUB JOIN-->
+
+                <div data-conv-case="clubjoin">
+                    <input type="text" data-conv-question="Go to our HOME page-> Click on CLUBS tab to explore and join!" data-no-answer="true">
+                    <select data-conv-question="Please click OK to proceed">
+                                        <option value="Yes">OK</option>
+                                      </select>
+                </div>
+            </div>
+
+            <div data-conv-fork="Info">
+                <div data-conv-case="want">
+                    <input data-conv-question="Enter your e-mail." data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="email" name="email" required placeholder="What's your e-mail?">
+                    <select data-conv-question="We will send more details to {email}">
+                                        <option value="Yes">OK</option>
+                                      </select>
+                </div>
+            </div>
+
+            <!--  <select data-conv-question="Please click OK to proceed">
+                                <option value="Yes">OK</option>
+                              </select> -->
+
+        </form>
+    </div>
+</div>
