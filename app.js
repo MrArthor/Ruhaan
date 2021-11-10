@@ -3,33 +3,14 @@ const path = require("path");
 //const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
 const session = require("express-session");
-const sql = require("mssql");
 const { createPool } = require('mysql')
-
 const pool = createPool({
     host: "localhost",
     user: "root",
     password: "",
-    database: "test",
+    database: "ruhaan",
     connectionLimit: 10
 });
-const config = {
-    user: 'root',
-    password: '',
-    database: 'ruhaana',
-    server: 'localhost',
-    pool: {
-        max: 10,
-        min: 0,
-        idleTimeoutMillis: 30000
-    },
-    options: {
-        trustedconnection: true,
-        enableArithAbort: true,
-        instancename: 'phpmyadmin'
-    },
-    port: 12292
-}
 
 const ExpressError = require("./utils/ExpressError");
 const methodOverride = require("method-override");
@@ -61,18 +42,14 @@ app.get("/", async(req, res) => {
 
 });
 app.get("/about", async(req, res) => {
-    await sql.connect(config, () => {
-        console.log("connected");
-    });
+    pool.query(`select * from sitecheck`, function(err, result, fields) {
+        if (err) {
+            console.log(err);
+        }
+        const results = Object.values(JSON.parse(JSON.stringify(result)));
 
-    try {
-
-        await sql.query `instert into sitecheck values('suar')`;
-        console.log(result)
-    } catch (err) {
-        console.log('Fuck')
-            // ... error checks
-    }
+        console.log(results[0].Name);
+    })
     res.render("About");
 });
 app.get("/Club", (req, res) => {
@@ -93,13 +70,25 @@ app.get("/Contactus", (req, res) => {
 });
 app.get("/Login", (req, res) => {
     //res.send("home");
-    res.render("Login");
-});
-app.post("/Login", (req, res) => {
 
-    //res.send("home");
     res.render("Login");
 });
+app.post('/Signin', async(req, res) => {
+    // console.log(req.body.Club.Email);
+
+    const { Email, Password } = req.body.Club;
+    console.log(Email, Password);
+    pool.query(`INSERT INTO SITECHECK VALUES ('${Email}','${Password}')`, function(err, result, fields) {
+        if (err) {
+            console.log(err);
+        }
+        console.log('Done') //  const results = Object.values(JSON.parse(JSON.stringify(result)));
+
+        //     //console.log(results[0].Name);
+    })
+    res.render("Login");
+});
+
 app.get("/Forget", (req, res) => {
     //res.send("home");
     res.render("Forget");
