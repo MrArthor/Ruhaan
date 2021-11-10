@@ -90,77 +90,8 @@ app.get("/SingleChild", (req, res) => {
 app.get("/register", (req, res) => {
     res.render("register");
 });
-
-app.post('/details', async(req, res) => {
-
-    const { name, email, phone } = req.body.detail;
-    console.log(name, email, phone);
-    pool.query(`INSERT INTO SITECHECK VALUES ('${name}','${email}','${phone}')`, function(err, result, fields) {
-        if (err) {
-            console.log(err);
-        }
-        console.log('Done') //  const results = Object.values(JSON.parse(JSON.stringify(result)));
-            //     //console.log(results[0].Name);
-    })
-    res.render("details");
-});
-
-app.post('/join', async(req, res) => {
-
-    const { name, email, phone } = req.body.joins;
-    console.log(name, email, phone);
-    pool.query(`INSERT INTO SITECHECK VALUES ('${name}','${email}','${phone}')`, function(err, result, fields) {
-        if (err) {
-            console.log(err);
-        }
-        console.log('Done') //  const results = Object.values(JSON.parse(JSON.stringify(result)));
-            //     //console.log(results[0].Name);
-    })
-    res.render("join");
-});
-
-app.post('/cdetails', async(req, res) => {
-    console.log(req.body.cdetails);
-    const { name, email, phone } = req.body.cdetail;
-    console.log(name, email, phone);
-    pool.query(`INSERT INTO SingleChild VALUES ('${name}','${email}','${phone}')`, function(err, result, fields) {
-        if (err) {
-            console.log(err);
-        }
-        console.log('Done') //  const results = Object.values(JSON.parse(JSON.stringify(result)));
-            //     //console.log(results[0].Name);
-    })
-    res.render("SingleChild");
-});
-
-
-
-app.post('/comments', async(req, res) => {
-
-    const { name, email, website, area } = req.body.comment;
-    console.log(name, email, website, area);
-    pool.query(`INSERT INTO SITECHECK VALUES ('${name}','${email}','${website}','${area}')`, function(err, result, fields) {
-        if (err) {
-            console.log(err);
-        }
-        console.log('Done') //  const results = Object.values(JSON.parse(JSON.stringify(result)));
-            //     //console.log(results[0].Name);
-    })
-    res.render("comment");
-});
-
-app.post('/newsletters', async(req, res) => {
-
-    const { email } = req.body.newsletter;
-    console.log(email);
-    pool.query(`INSERT INTO SITECHECK VALUES ('${email}')`, function(err, result, fields) {
-        if (err) {
-            console.log(err);
-        }
-        console.log('Done') //  const results = Object.values(JSON.parse(JSON.stringify(result)));
-            //     //console.log(results[0].Name);
-    })
-    res.render("newsletters");
+app.get("/SingleClub", (req, res) => {
+    res.render("SingleClub");
 });
 
 app.post('/registers', async(req, res) => {

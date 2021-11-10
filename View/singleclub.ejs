@@ -90,7 +90,7 @@
                                                     <input type="text" name="detail[name]" id="name" placeholder="&#xf2c0; Full name">
                                                     <input type="email" name="detail[email]" id="email" placeholder="&#xf003; Email">
 
-                                                    <input type="tel" name="detail[phone]" id="phone" placeholder="&#xf040; Contact Number">
+                                                    <input type="number" name="detail[phone]" id="phone" placeholder="&#xf040; Contact Number">
                                                 </li>
                                                 <li>
                                                     <input onclick="myFunction()" type="submit" value="Connect" class="btn" id="submit">
@@ -103,17 +103,18 @@
                                     <!--Connect Form-->
 
                                     <div id="contact" class="join">
-                                        <form action="join" method="POST">
+                                        <form action="joint" method="POST">
                                             <ul>
                                                 <h1>Join Club</h1>
                                                 <li>
                                                     <input type="text" name="joins[name]" id="name1" placeholder="&#xf2c0; Full name">
                                                     <input type="email" name="joins[email]" id="email1" placeholder="&#xf003; Email">
 
-                                                    <textarea type="tel" name="joins[phone]" id="phone1" placeholder="&#xf040; Why you want to join this club"></textarea>
+                                                    <textarea name="joins[phone]" id="" placeholder="&#xf040; Why you want to join this club"></textarea>
                                                 </li>
                                                 <li>
-                                                    <input onclick="myFunction()" type="submit" value="Connect" class="btn" id="submit1">
+                                                    <button type="submit">Submit</button>
+                                                    <!-- <button type="submit" class="btn" id="submit1">Submit</button> -->
                                                     <div id="result"></div>
                                                 </li>
                                             </ul>
