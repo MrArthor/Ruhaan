@@ -184,7 +184,7 @@ app.post('/searchpost', async(req, res) => {
 
     const { search } = req.body.searchposts;
     console.log(search);
-    pool.query(`INSERT INTO SITECHECK VALUES ('${search}')`, function(err, result, fields) {
+    pool.query(`INSERT INTO searchpost VALUES ('${search}')`, function(err, result, fields) {
         if (err) {
             console.log(err);
         }
@@ -198,7 +198,7 @@ app.post('/news', async(req, res) => {
 
     const { email } = req.body.news1;
     console.log(email);
-    pool.query(`INSERT INTO SITECHECK VALUES ('${email}')`, function(err, result, fields) {
+    pool.query(`INSERT INTO NewsLetter VALUES ('${email}')`, function(err, result, fields) {
         if (err) {
             console.log(err);
         }
