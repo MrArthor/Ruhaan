@@ -4,7 +4,15 @@ const path = require("path");
 const ejsMate = require("ejs-mate");
 const session = require("express-session");
 const sql = require("mssql");
+const { createPool } = require('mysql')
 
+const pool = createPool({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "test",
+    connectionLimit: 10
+});
 const config = {
     user: 'root',
     password: '',
@@ -53,12 +61,13 @@ app.get("/", async(req, res) => {
 
 });
 app.get("/about", async(req, res) => {
+    await sql.connect(config, () => {
+        console.log("connected");
+    });
+
     try {
-        await sql.connect(config, () => {
-            console.log("connected");
-        });
-        const result = await sql.query `SELECT * FROM 
-        sitecheck  WHERE 1`
+
+        await sql.query `instert into sitecheck values('suar')`;
         console.log(result)
     } catch (err) {
         console.log('Fuck')
