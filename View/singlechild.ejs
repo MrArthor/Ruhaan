@@ -75,17 +75,17 @@
                                 <button class="btn" type="button" id="c-btn"><a href="#" style="color: black" >Connect</a></button></center>
                             <!--Connect Form-->
                             <div id="contact" style="color:#071739 !important">
-                                <form action="#">
+                                <form action="cdetails" method="POST">
                                     <ul>
                                         <h1>Share Details</h1>
                                         <li>
-                                            <input type="text" name="name" id="name" placeholder="&#xf2c0; Full name">
-                                            <input type="email" name="email" id="email" placeholder="&#xf003; Email">
+                                            <input type="text" name="cdetail[name]" id="name" placeholder="&#xf2c0; Full name">
+                                            <input type="email" name="cdetail[email]" id="email" placeholder="&#xf003; Email">
 
-                                            <input type="tel" name="phone" id="phone" placeholder="&#xf040; Contact Number">
+                                            <input type="tel" name="cdetail[phone]" id="phone" placeholder="&#xf040; Contact Number">
                                         </li>
                                         <li>
-                                            <input onclick="myFunction()" type="submit" value="Connect" class="btn" id="submit">
+                                            <input onclick="myFunction()" type="submit" class="btn" id="submit">
                                             <div id="result"></div>
                                         </li>
                                     </ul>

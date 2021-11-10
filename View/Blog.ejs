@@ -164,9 +164,9 @@
                     <div class="tp-blog-sidebar" style="color:white;">
                         <div class="widget search-widget">
                             <h3>Search Here</h3>
-                            <form>
+                            <form action="searchpost" method="POST">
                                 <div>
-                                    <input type="text" class="form-control" placeholder="Search Post..">
+                                    <input name="searchposts[search]" type="text" class="form-control" placeholder="Search Post..">
                                     <button type="submit"><i class="ti-search"></i></button>
                                 </div>
                             </form>
@@ -242,9 +242,9 @@
                                 <p>Keep yourself updated with all the new activities on Ruhaan.</p>
                             </center>
                             <div class="newsletter-form">
-                                <form>
+                                <form action="news" method="POST">
                                     <div>
-                                        <input type="text" placeholder="Enter Your Email" class="form-control">
+                                        <input name="news1[email]" type="text" placeholder="Enter Your Email" class="form-control">
                                         <button class="bigCursor" type="submit">Subscribe</button>
                                     </div>
                                 </form>

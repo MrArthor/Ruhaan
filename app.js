@@ -53,23 +53,18 @@ app.get("/about", async(req, res) => {
     res.render("About");
 });
 app.get("/Club", (req, res) => {
-    //res.send("home");
     res.render("Club");
 });
 app.get("/Children", (req, res) => {
-    //res.send("home");
     res.render("Children");
 });
 app.get("/Blog", (req, res) => {
-    //res.send("home");
     res.render("Blog");
 });
 app.get("/Contactus", (req, res) => {
-    //res.send("home");
     res.render("Contactus");
 });
 app.get("/Login", (req, res) => {
-    //res.send("home");
 
     res.render("Login");
 });
@@ -86,10 +81,14 @@ app.post('/Signin', async(req, res) => {
     })
     res.render("Login");
 });
-
 app.get("/Forget", (req, res) => {
-    //res.send("home");
     res.render("Forget");
+});
+app.get("/SingleChild", (req, res) => {
+    res.render("SingleChild");
+});
+app.get("/register", (req, res) => {
+    res.render("register");
 });
 
 app.post('/details', async(req, res) => {
@@ -121,17 +120,17 @@ app.post('/join', async(req, res) => {
 });
 
 app.post('/cdetails', async(req, res) => {
-
+    console.log(req.body.cdetails);
     const { name, email, phone } = req.body.cdetail;
     console.log(name, email, phone);
-    pool.query(`INSERT INTO SITECHECK VALUES ('${name}','${email}','${phone}')`, function(err, result, fields) {
+    pool.query(`INSERT INTO SingleChild VALUES ('${name}','${email}','${phone}')`, function(err, result, fields) {
         if (err) {
             console.log(err);
         }
         console.log('Done') //  const results = Object.values(JSON.parse(JSON.stringify(result)));
             //     //console.log(results[0].Name);
     })
-    res.render("cdetails");
+    res.render("SingleChild");
 });
 
 
@@ -168,14 +167,16 @@ app.post('/registers', async(req, res) => {
 
     const { name, email, pass1, pass2 } = req.body.register;
     console.log(email);
-    pool.query(`INSERT INTO SITECHECK VALUES ('${name}','${email}','${pass1}','${pass2}')`, function(err, result, fields) {
-        if (err) {
-            console.log(err);
-        }
-        console.log('Done') //  const results = Object.values(JSON.parse(JSON.stringify(result)));
-            //     //console.log(results[0].Name);
-    })
-    res.render("registers");
+    if (pass1 == pass2) {
+        pool.query(`INSERT INTO Clubs VALUES ('${name}','${email}','${pass1}')`, function(err, result, fields) {
+            if (err) {
+                console.log(err);
+            }
+            console.log('Done') //  const results = Object.values(JSON.parse(JSON.stringify(result)));
+                //     //console.log(results[0].Name);
+        })
+    }
+    res.render("register");
 });
 
 app.post('/search', async(req, res) => {

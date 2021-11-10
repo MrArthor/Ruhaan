@@ -58,8 +58,8 @@
         <div id="myOverlay" class="overlay">
             <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
             <div class="overlay-content">
-                <form action="/action_page.php">
-                    <input type="text" placeholder="Search.." name="search">
+                <form action="/action_page.php" action="search" method="POST">
+                    <input type="text" placeholder="Search.." name="searchbox[search]">
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
@@ -393,9 +393,9 @@
                                     <p>Keep yourself updated with all the new activities on Ruhaan.</p>
                                 </center>
                                 <div class="newsletter-form">
-                                    <form>
+                                    <form action="newsletter1" method="POST">
                                         <div>
-                                            <input type="text" placeholder="Enter Your Email" class="form-control">
+                                            <input name="newsletter2[email]" type="text" placeholder="Enter Your Email" class="form-control">
                                             <button class="bigCursor" type="submit">Subscribe</button>
                                         </div>
                                     </form>
@@ -559,7 +559,7 @@
 
     <div class="chat_box">
         <div class="my-conv-form-wrapper">
-            <form action="" method="GET" class="hidden">
+            <form action="chatbot" method="GET" class="hidden">
 
                 <!--choice between CLUB AND CHILDREN-->
                 <select data-conv-question="What do you want to know about?" name="category">
@@ -680,7 +680,7 @@
 
                 <div data-conv-fork="Info">
                     <div data-conv-case="want">
-                        <input data-conv-question="Enter your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="email" name="email" required placeholder="What's your e-mail?">
+                        <input data-conv-question="Enter your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="email" name="chat[email]" required placeholder="What's your e-mail?">
                         <select data-conv-question="We will send more details to {email}">
                                             <option value="Yes">OK</option>
                         </select>

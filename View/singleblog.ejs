@@ -196,14 +196,14 @@
                             <!-- end comments-area -->
                             <div class="comment-respond">
                                 <h3 class="comment-reply-title">Leave a Comment</h3>
-                                <form method="post" id="commentform" class="comment-form">
+                                <form action="comments" method="POST" id="commentform" class="comment-form">
                                     <div class="form-inputs">
-                                        <input placeholder="Name" type="text">
-                                        <input placeholder="Email" type="email">
-                                        <input placeholder="Website" type="url">
+                                        <input name="comment[name]" placeholder="Name" type="text">
+                                        <input name="comment[email]" placeholder="Email" type="email">
+                                        <input name="comment[website]" placeholder="Website" type="url">
                                     </div>
                                     <div class="form-textarea">
-                                        <textarea id="comment" placeholder="Write Your Comments..."></textarea>
+                                        <textarea name="comment[area]" id="comment" placeholder="Write Your Comments..."></textarea>
                                     </div>
                                     <div class="form-submit">
                                         <input id="submit" value="Reply" type="submit">
@@ -227,9 +227,9 @@
                                     <p>Keep yourself updated with all the new activities on Ruhaan.</p>
                                 </center>
                                 <div class="newsletter-form">
-                                    <form>
+                                    <form action="newsletters" method="POST">
                                         <div>
-                                            <input type="text" placeholder="Enter Your Email" class="form-control">
+                                            <input name="newsletter[email]" type="text" placeholder="Enter Your Email" class="form-control">
                                             <button class="bigCursor" type="submit">Subscribe</button>
                                         </div>
                                     </form>

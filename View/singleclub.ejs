@@ -83,14 +83,14 @@
                                 <div id="panel"><button class="btn" type="button" id="c-btn"><a href="#" style="color: antiquewhite" >Connect</a></button>
                                     <!--Connect Form-->
                                     <div id="contact">
-                                        <form action="#">
+                                        <form action="details" method="POST">
                                             <ul>
                                                 <h1>Share Details</h1>
                                                 <li>
-                                                    <input type="text" name="name" id="name" placeholder="&#xf2c0; Full name">
-                                                    <input type="email" name="email" id="email" placeholder="&#xf003; Email">
+                                                    <input type="text" name="detail[name]" id="name" placeholder="&#xf2c0; Full name">
+                                                    <input type="email" name="detail[email]" id="email" placeholder="&#xf003; Email">
 
-                                                    <input type="tel" name="phone" id="phone" placeholder="&#xf040; Contact Number">
+                                                    <input type="tel" name="detail[phone]" id="phone" placeholder="&#xf040; Contact Number">
                                                 </li>
                                                 <li>
                                                     <input onclick="myFunction()" type="submit" value="Connect" class="btn" id="submit">
@@ -103,14 +103,14 @@
                                     <!--Connect Form-->
 
                                     <div id="contact" class="join">
-                                        <form action="#">
+                                        <form action="join" method="POST">
                                             <ul>
                                                 <h1>Join Club</h1>
                                                 <li>
-                                                    <input type="text" name="name" id="name1" placeholder="&#xf2c0; Full name">
-                                                    <input type="email" name="email" id="email1" placeholder="&#xf003; Email">
+                                                    <input type="text" name="joins[name]" id="name1" placeholder="&#xf2c0; Full name">
+                                                    <input type="email" name="joins[email]" id="email1" placeholder="&#xf003; Email">
 
-                                                    <textarea type="tel" name="phone" id="phone1" placeholder="&#xf040; Why you want to join this club"></textarea>
+                                                    <textarea type="tel" name="joins[phone]" id="phone1" placeholder="&#xf040; Why you want to join this club"></textarea>
                                                 </li>
                                                 <li>
                                                     <input onclick="myFunction()" type="submit" value="Connect" class="btn" id="submit1">
