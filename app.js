@@ -1,9 +1,18 @@
 const express = require("express");
 const path = require("path");
-const mongoose = require("mongoose");
+//const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
 const session = require("express-session");
-const Flash = require("connect-flash");
+const sql = require("mssql");
+
+const config = {
+    user: 'root',
+    password: '',
+    server: '127.0.0.1',
+    database: 'Ruhaana'
+};
+
+//const Flash = require("connect-flash");
 // const catchAsync = require("./utils/catchAsync");
 const ExpressError = require("./utils/ExpressError");
 const methodOverride = require("method-override");
@@ -32,18 +41,6 @@ app.use(bodyParser.json());
 
 
 
-mongoose.connect("mongodb://localhost:27017/", {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
-});
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", () => {
-    console.log("Database connected");
-});
-mongoose.set('useFindAndModify', false);
 
 
 
@@ -88,8 +85,24 @@ app.use(express.static(path.join(__dirname, 'Public')))
 // app.use('/campgrounds/:id/reviews', ReviewRouter)
 
 
-app.get("/", (req, res) => {
+app.get("/", async(req, res) => {
+
+    const request = new sql.Request();
+    // query to the database and get the records
+    const name = 'Suar';
+    sql.connect(config, function(err) {
+
+        if (err) console.log(err);
+
+        request.query(`insert into sitecheck values (${name}) `, (err, recordset) => {
+
+            if (err) console.log(err)
+            console.log(recordset);
+        });
+    });
+    // send records as a response
     res.render("home"); // render == view/home.ejs
+
 });
 app.get("/about", (req, res) => {
     //res.send("home");
@@ -133,7 +146,7 @@ app.post('/Login', async(req, res) => {
     }
     console.log(req.body);
     res.send(req.body);
-})
+});
 app.get("/Forget", (req, res) => {
     //res.send("home");
     res.render("Forget");
