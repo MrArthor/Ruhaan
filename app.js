@@ -82,6 +82,10 @@ app.get("/Login", (req, res) => {
 
     res.render("Login");
 });
+app.get("/singleblog", (req, res) => {
+
+    res.render("singleblog");
+});
 var sessions
 app.post('/Login', async(req, res) => {
 
