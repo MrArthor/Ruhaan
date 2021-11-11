@@ -3,6 +3,7 @@ const path = require("path");
 //const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
 const session = require("express-session");
+const cookieParser = require("cookie-parser");
 const { createPool } = require('mysql')
 const pool = createPool({
     host: "localhost",
@@ -14,6 +15,7 @@ const pool = createPool({
 
 const ExpressError = require("./utils/ExpressError");
 const methodOverride = require("method-override");
+app.use(cookieParser());
 
 const app = express();
 
@@ -33,6 +35,19 @@ app.set("views", path.join(__dirname, "View"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'))
 app.use(express.static(path.join(__dirname, 'Public')))
+const SessionConfig = {
+    secret: 'Thisshoudbebettersecret1',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        httpOnly: true,
+        expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+        maxAge: 1000 * 60 * 60 * 24 * 7
+    }
+}
+
+app.use(session(SessionConfig));
+
 
 app.get("/", async(req, res) => {
 
@@ -84,7 +99,7 @@ app.get("/Login", (req, res) => {
 app.post('/Login', async(req, res) => {
     const { Email, Password } = req.body.Club;
     console.log(Email, Password);
-    pool.query(`select * from sitecheck where Email='${Email}' and Password='${Password}'`, function(err, result, fields) {
+    pool.query(`select * from clubs where Email='${Email}' and Password='${Password}'`, function(err, result, fields) {
         if (err) {
             console.log(err);
         }
@@ -92,7 +107,7 @@ app.post('/Login', async(req, res) => {
         const results = Object.values(JSON.parse(JSON.stringify(result)));
         console.log(results);
         if (results != null) {
-            res.render("Club");
+            res.render("SingleClub", { results });
         } else {
             res.render("Login");
         }
@@ -241,6 +256,6 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("error", { err });
 });
 
-app.listen(3000, () => {
-    console.log("Serving on port 3000");
+app.listen(9483, () => {
+    console.log("Serving on port 9483");
 });

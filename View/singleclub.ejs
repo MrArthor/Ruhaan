@@ -57,8 +57,18 @@
 
                             </div> <br><br>
                             <center>
-                                <h2>Name of Club: Smile </h2><br>
-
+                                <h2>Name of Club:
+                                    <% if(results) {%>
+                                        <%=results[0].Name%>
+                                            <%     } else{ %> Smile
+                                                <% } %>
+                                </h2><br>
+                                <h3>Email
+                                    <% if(results) {%>
+                                        <%=results[0].Email%>
+                                            <%     } else{ %> Smile@Smile.com
+                                                <% } %>
+                                </h3>
                                 <button class="btn">Click for Details</button></center>
                             <div id="div2" class="font">
                                 <center>
