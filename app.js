@@ -68,19 +68,42 @@ app.get("/Login", (req, res) => {
 
     res.render("Login");
 });
-app.post('/Signin', async(req, res) => {
+// app.post('/login', async(req, res) => {
 
+//     const { Email, Password } = req.body.Club;
+//     console.log(Email, Password);
+//     pool.query(`INSERT INTO SITECHECK VALUES ('${Email}','${Password}')`, function(err, result, fields) {
+//         if (err) {
+//             console.log(err);
+//         }
+//         console.log('Done') //  const results = Object.values(JSON.parse(JSON.stringify(result)));
+//             //     //console.log(results[0].Name);
+//     })
+//     res.render("Login");
+// });
+app.post('/Login', async(req, res) => {
     const { Email, Password } = req.body.Club;
     console.log(Email, Password);
-    pool.query(`INSERT INTO SITECHECK VALUES ('${Email}','${Password}')`, function(err, result, fields) {
+    pool.query(`select * from sitecheck where Email='${Email}' and Password='${Password}'`, function(err, result, fields) {
         if (err) {
             console.log(err);
         }
-        console.log('Done') //  const results = Object.values(JSON.parse(JSON.stringify(result)));
-            //     //console.log(results[0].Name);
-    })
-    res.render("Login");
+        console.log('Done')
+        const results = Object.values(JSON.parse(JSON.stringify(result)));
+        console.log(results);
+        if (results != null) {
+            res.render("Club");
+        } else {
+            res.render("Login");
+        }
+
+
+    });
+
+
+
 });
+
 app.get("/Forget", (req, res) => {
     res.render("Forget");
 });
@@ -99,7 +122,7 @@ app.post('/registers', async(req, res) => {
     const { name, email, pass1, pass2 } = req.body.register;
     console.log(email);
     if (pass1 == pass2) {
-        pool.query(`INSERT INTO Clubs VALUES ('${name}','${email}','${pass1}')`, function(err, result, fields) {
+        pool.query(`INSERT INTO register VALUES ('${name}','${email}','${pass1}')`, function(err, result, fields) {
             if (err) {
                 console.log(err);
             }
@@ -166,18 +189,18 @@ app.post('/account', async(req, res) => {
     res.render("account");
 });
 
-app.post('/contact', async(req, res) => {
+app.post('/contacts', async(req, res) => {
 
     const { firstname, lastname, email, phone, subject, comments } = req.body.contacts;
     console.log(firstname, lastname, email, phone, subject, comments);
-    pool.query(`INSERT INTO SITECHECK VALUES ('${firstname}','${lastname}','${email}','${phone}','${subject}','${comments}')`, function(err, result, fields) {
+    pool.query(`INSERT INTO contact VALUES ('${firstname}','${lastname}','${email}','${phone}','${subject}','${comments}')`, function(err, result, fields) {
         if (err) {
             console.log(err);
         }
         console.log('Done') //  const results = Object.values(JSON.parse(JSON.stringify(result)));
             //     //console.log(results[0].Name);
     })
-    res.render("contacts");
+    res.render("contact");
 });
 
 app.post('/searchpost', async(req, res) => {
@@ -209,7 +232,7 @@ app.post('/news', async(req, res) => {
 });
 
 app.all("*", (req, res, next) => {
-    next(new ExpressError("What The Fuck Happened  Now??????", 404));
+    next(new ExpressError("404 Error Not Found", 404));
 });
 
 app.use((err, req, res, next) => {
@@ -218,6 +241,6 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("error", { err });
 });
 
-app.listen(9483, () => {
-    console.log("Serving on port 9483");
+app.listen(3000, () => {
+    console.log("Serving on port 3000");
 });
