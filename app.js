@@ -93,11 +93,10 @@ app.post('/Login', async(req, res) => {
         }
         console.log('Done')
         const results = Object.values(JSON.parse(JSON.stringify(result)));
-        console.log(results);
         if (results != null) {
             sessions = req.session;
-            sessions.userid = req.body.username;
-            console.log(req.sessions)
+            sessions.userid = req.body.Club.Email;
+
             res.render("SingleClub", { results });
         } else {
             res.render("Login");
