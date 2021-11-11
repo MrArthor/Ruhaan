@@ -15,9 +15,8 @@ const pool = createPool({
 
 const ExpressError = require("./utils/ExpressError");
 const methodOverride = require("method-override");
-app.use(cookieParser());
-
 const app = express();
+app.use(cookieParser());
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
@@ -83,20 +82,9 @@ app.get("/Login", (req, res) => {
 
     res.render("Login");
 });
-// app.post('/login', async(req, res) => {
-
-//     const { Email, Password } = req.body.Club;
-//     console.log(Email, Password);
-//     pool.query(`INSERT INTO SITECHECK VALUES ('${Email}','${Password}')`, function(err, result, fields) {
-//         if (err) {
-//             console.log(err);
-//         }
-//         console.log('Done') //  const results = Object.values(JSON.parse(JSON.stringify(result)));
-//             //     //console.log(results[0].Name);
-//     })
-//     res.render("Login");
-// });
+var sessions
 app.post('/Login', async(req, res) => {
+
     const { Email, Password } = req.body.Club;
     console.log(Email, Password);
     pool.query(`select * from clubs where Email='${Email}' and Password='${Password}'`, function(err, result, fields) {
@@ -107,6 +95,9 @@ app.post('/Login', async(req, res) => {
         const results = Object.values(JSON.parse(JSON.stringify(result)));
         console.log(results);
         if (results != null) {
+            sessions = req.session;
+            sessions.userid = req.body.username;
+            console.log(req.sessions)
             res.render("SingleClub", { results });
         } else {
             res.render("Login");
