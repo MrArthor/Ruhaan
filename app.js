@@ -56,14 +56,7 @@ app.get("/", async(req, res) => {
 
 });
 app.get("/about", async(req, res) => {
-    pool.query(`select * from sitecheck`, function(err, result, fields) {
-        if (err) {
-            console.log(err);
-        }
-        const results = Object.values(JSON.parse(JSON.stringify(result)));
 
-        console.log(results[0].Name);
-    })
     res.render("About");
 });
 app.get("/Club", (req, res) => {
@@ -99,9 +92,20 @@ app.get("/Login", (req, res) => {
 
     res.render("Login");
 });
-app.get("/singleblog", (req, res) => {
-
-    res.render("singleblog");
+app.get("/singleblog/:id", (req, res) => {
+    const id = req.params.id;
+    pool.query(`select * from Blogs where Title='${id}'`, function(err, result, fields) {
+        if (err) {
+            console.log(err);
+        }
+        const results = Object.values(JSON.parse(JSON.stringify(result)));
+        if (result != null) {
+            console.log(result);
+            res.render("singleblog", { results });
+        } else {
+            res.send("Blog Not Found")
+        }
+    })
 });
 var sessions
 app.post('/Login', async(req, res) => {
@@ -200,7 +204,6 @@ app.post('/newsletter1', async(req, res) => {
 app.post('/chatbot', async(req, res) => {
 
     const { email } = req.body.chat;
-    console.log(email);
     pool.query(`INSERT INTO SITECHECK VALUES ('${email}')`, function(err, result, fields) {
         if (err) {
             console.log(err);
@@ -214,7 +217,6 @@ app.post('/chatbot', async(req, res) => {
 app.post('/account', async(req, res) => {
 
     const { email } = req.body.accounts;
-    console.log(email);
     pool.query(`INSERT INTO SITECHECK VALUES ('${email}')`, function(err, result, fields) {
         if (err) {
             console.log(err);
@@ -228,7 +230,6 @@ app.post('/account', async(req, res) => {
 app.post('/contacts', async(req, res) => {
 
     const { firstname, lastname, email, phone, subject, comments } = req.body.contacts;
-    console.log(firstname, lastname, email, phone, subject, comments);
     pool.query(`INSERT INTO contact VALUES ('${firstname}','${lastname}','${email}','${phone}','${subject}','${comments}')`, function(err, result, fields) {
         if (err) {
             console.log(err);
