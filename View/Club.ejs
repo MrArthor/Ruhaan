@@ -79,156 +79,39 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="Images/club1.jpg" alt="Avatar" style="width:300px;height:300px;">
-                        </div>
-                        <div class="flip-card-back" style="background-color:#071739 !important;                "><br><br>
-                            <h1>UMEED</h1>
-                            <p>CHILDREN WELFARE CLUB</p>
-                            <a href="singleclub" title="Connect with UMEED" class="example" id="myTooltip">
-                                <div id="div1" class="fa"></div>
-                            </a>
-                            <a href="singleclub" title="More info" class="example" id="myTooltip">
-                                <div class="plus-sign"><i class="bi bi-plus"></i>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+            <% for (let club in Clubs){ %>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="<%= club.Source %>" alt="Avatar" style="width:300px;height:300px;">
+                            </div>
+                            <div class="flip-card-back" style="background-color:#071739 !important;                "><br><br>
+                                <h1>
+                                    <%= club.Name %>
+                                </h1>
+                                <p>
+                                    <%= club.About %>
+                                </p>
+                                <a href="singleclub/<%= club.Name %>" title="Connect with <%= club.Name %> " class="example" id="myTooltip">
+                                    <div id="div1" class="fa"></div>
+                                </a>
+                                <a href="singleclub/<%= club.Name %>" title="More info" class="example" id="myTooltip">
+                                    <div class="plus-sign"><i class="bi bi-plus"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                           </svg>
-                                </div>
-                            </a>
+                                    </div>
+                                </a>
 
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="Images/club2.jpg" alt="Avatar" style="width:300px;height:300px;">
-                            <br>
-                        </div>
-                        <div class="flip-card-back" style="background-color:#274684 !important;                        "><br><br>
-                            <h1>INAAYAT</h1>
-                            <p>DONATION DRIVE CLUB</p>
-                            <a href="singleclub" title="Connect with INAAYAT" class="example" id="myTooltip">
-                                <div id="div2" class="fa" style="font-size: 48px;"></div>
-                            </a>
-                            <a href="singleclub" title="More info" class="example" id="myTooltip">
-                                <div class="plus-sign"><i class="bi bi-plus"></i>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                          </svg>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="Images/club3.jpg" alt="Avatar" style="width:300px;height:300px;">
-                        </div>
-                        <div class="flip-card-back" style="background-color:#709fdc                        !important;"><br><br>
-                            <h1>GOONJ</h1>
-                            <p>COMMUNITY DEVELOPMENT CLUB</p>
-                            <a href="singleclub " title="Connect with GOONJ " class="example " id="myTooltip ">
-                                <div id="div3 " class="fa " style="font-size: 48px;"></div>
-                            </a>
-                            <a href="singleclub " title="More info " class="example " id="myTooltip ">
-                                <div class="plus-sign "><i class="bi bi-plus "></i>
-                                    <svg xmlns="http://www.w3.org/2000/svg " width="48 " height="48 " fill="currentColor " class="bi bi-plus " viewBox="0 0 16 16 ">
-                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z "/>
-                          </svg>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-        <br><br><br>
+        <% } %>
 
-        <div class="row ">
-            <div class="col-lg-4 col-md-6 col-sm-12 ">
-                <div class="flip-card ">
-                    <div class="flip-card-inner ">
-                        <div class="flip-card-front ">
-                            <img src="Images/club4.jpg " alt="Avatar " style="width:300px;height:300px; ">
-                        </div>
-                        <div class="flip-card-back " style="background-color:#274684 !important;                        "><br><br>
-                            <h1>CRY</h1>
-                            <p>CHILD RIGHTS and YOU</p>
-                            <a href="singleclub " title="Connect with CRY " class="example " id="myTooltip ">
-                                <div id="div4 " class="fa " style="font-size: 48px;"></div>
-                            </a>
-                            <a href="singleclub " title="More info " class="example " id="myTooltip ">
-                                <div class="plus-sign "><i class="bi bi-plus "></i>
-                                    <svg xmlns="http://www.w3.org/2000/svg " width="48 " height="48 " fill="currentColor " class="bi bi-plus " viewBox="0 0 16 16 ">
-                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z "/>
-                          </svg>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 ">
-                <div class="flip-card ">
-                    <div class="flip-card-inner ">
-                        <div class="flip-card-front ">
-                            <img src="Images/club5.jpg " alt="Avatar " style="width:300px;height:300px; ">
-                        </div>
-                        <div class="flip-card-back " style="background-color:#709fdc                        !important;"><br><br>
-                            <h1>CIF</h1>
-                            <p>CHILDLINE INDIA FOUNDATION</p>
-                            <a href="singleclub " title="Connect with CIF " class="example " id="myTooltip ">
-                                <div id="div5 " class="fa " style="font-size: 48px;"></div>
-                            </a>
-                            <a href="singlclub " title="More info " class="example " id="myTooltip ">
-                                <div class="plus-sign "><i class="bi bi-plus "></i>
-                                    <svg xmlns="http://www.w3.org/2000/svg " width="48 " height="48 " fill="currentColor " class="bi bi-plus " viewBox="0 0 16 16 ">
-                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z "/>
-                          </svg>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 ">
-                <div class="flip-card ">
-                    <div class="flip-card-inner ">
-                        <div class="flip-card-front ">
-                            <img src="Images/club6.jpg " alt="Avatar " style="width:300px;height:300px; ">
-                        </div>
-                        <div class="flip-card-back " style="background-color:#071739 !important;                "><br><br>
-                            <h1>SAMMAAN</h1>
-                            <p>COMMUNITY SERVICE</p>
-                            <a href="singleclub " title="Connect with SAMMAAN " class="example " id="myTooltip ">
-                                <div id="div6 " class="fa " style="font-size: 48px;"></div>
-                            </a>
-                            <a href="singleclub " title="More info " class="example " id="myTooltip ">
-                                <div class="plus-sign "><i class="bi bi-plus "></i>
-                                    <svg xmlns="http://www.w3.org/2000/svg " width="48 " height="48 " fill="currentColor " class="bi bi-plus " viewBox="0 0 16 16 ">
-                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z "/>
-                          </svg>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-
 
     <script>
         function brakechain() {

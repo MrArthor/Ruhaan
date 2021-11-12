@@ -67,7 +67,18 @@ app.get("/about", async(req, res) => {
     res.render("About");
 });
 app.get("/Club", (req, res) => {
-    res.render("Club");
+    pool.query(`select * from sitecheck`, function(err, result, fields) {
+            if (err) {
+                console.log(err);
+            }
+            const Clubs = Object.values(JSON.parse(JSON.stringify(result)));
+
+            console.log(Clubs);
+            if (Clubs != null) {
+                res.render("Club", { Clubs });
+            }
+        })
+        // res.render("Club");
 });
 app.get("/Children", (req, res) => {
     res.render("Children");
