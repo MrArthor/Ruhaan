@@ -57,62 +57,20 @@
     </div>
 
     <div class="row">
-        <div class="column">
-            <div class="container1">
-                <img src="Images/child1.jpg" alt="Avatar" style="width:100%; ">
-                <div class="overlay">My Name is Sonu
-                    <br>
-                    <a href="singlechild"><button class="button">Know More About Me</button></a>
-                </div>
 
-            </div>
-        </div>
-        <div class="column">
-            <div class="container1">
-                <img src="Images/child3.jpg" alt="Avatar" style="width:100% ;">
-                <div class="overlay">My Name is Tushar
-                    <br>
-                    <a href="singlechild"><button class="button">Know More About Me</button></a>
+        <% for(let Child of Children){ %>
+            <div class="column">
+                <div class="container1">
+                    <img src="<%=Child.Image%>" alt="Avatar" style="width:100%">
+                    <div class="overlay">My Name is
+                        <%=Child.Name%>
+                            <br>
+                            <a href="singlechild/<%=Child.Name%>"><button class="button">Know More About Me</button></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="column">
-            <div class="container1">
-                <img src="Images/child6.jpg" alt="Avatar" style="width:100%">
-                <div class="overlay">My Name is Ria
-                    <br>
-                    <a href="singlechild"><button class="button">Know More About Me</button></a>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="container1">
-                <img src="Images/child4.jpg" alt="Avatar" style="width:100%">
-                <div class="overlay">My Name is Sumekh
-                    <br>
-                    <a href="singlechild"><button class="button">Know More About Me</button></a>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="container1">
-                <img src="Images/child5.jpg" alt="Avatar" style="width:100%">
-                <div class="overlay">My Name is Tara
-                    <br>
-                    <a href="singlechild"><button class="button">Know More About Me</button></a>
-                </div>
-            </div>
-        </div>
+            <% } %>
 
-        <div class="column">
-            <div class="container1">
-                <img src="Images/child2.jpg" alt="Avatar" style="width:100%">
-                <div class="overlay">My Name is Darshi
-                    <br>
-                    <a href="singlechild"><button class="button">Know More About Me</button></a>
-                </div>
-            </div>
-        </div>
     </div>
     <br><br><br>
     <div class="tp-ne-footer">

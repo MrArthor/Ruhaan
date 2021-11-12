@@ -72,8 +72,33 @@ app.get("/Club", (req, res) => {
         // res.render("Club");
 });
 app.get("/Children", (req, res) => {
-    res.render("Children");
+    pool.query(`select * from Children`, function(err, result, fields) {
+            if (err) {
+                console.log(err);
+            }
+            const Children = Object.values(JSON.parse(JSON.stringify(result)));
+            if (Children != null) {
+                res.render("Children", { Children });
+            }
+        })
+        //  res.render("Children");
 });
+
+app.get("/SingleChild/:id", (req, res) => {
+    const id = req.params.id;
+    pool.query(`select * from children where name='${id}'`, function(err, result, fields) {
+        if (err) {
+            console.log(err);
+        }
+        const results = Object.values(JSON.parse(JSON.stringify(result)));
+        if (results != null) {
+            res.render("singlechild", { results });
+        } else {
+            res.send("Child Not Found")
+        }
+    })
+});
+
 app.get("/Blog", async(req, res) => {
     pool.query(`select * from Blogs`, function(err, result, fields) {
         if (err) {
@@ -136,9 +161,7 @@ app.post('/Login', async(req, res) => {
 app.get("/Forget", (req, res) => {
     res.render("Forget");
 });
-app.get("/SingleChild", (req, res) => {
-    res.render("SingleChild");
-});
+
 app.get("/register", (req, res) => {
     res.render("register");
 });

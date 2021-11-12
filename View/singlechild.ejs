@@ -31,7 +31,7 @@
 <body style="background-color:#b9d5fd; font-family:Garamond">
     <header>
         <div class="topnav fixed-top" id="myTopnav">
-            <a href="/" class="active"><img src="Images/Ruhaanlogo1.png" width=40px height=40px></a>
+            <a href="/" class="active"><img src="/Images/Ruhaanlogo1.png" width=40px height=40px></a>
             <a href="about">About</a>
             <a href="club">Clubs</a>
             <a href="children">Children</a>
@@ -60,11 +60,14 @@
                                 <br>
                             </center>
                             <div class="entry-media">
-                                <img id="im2" src="child1.jpg" alt=child>
+                                <img id="im2" src="/<%=results[0].Image%>" alt=child>
                             </div>
                             <center>
                                 <br>
-                                <h3>Name : Sonu <br> Age : 10 years <br> Location : Malka Ganj,Delhi <br> Nearby Landmark: Hansraj College
+                                <h3>Name :
+                                    <%=results[0].Name%> <br> Age :
+                                        <%=results[0].Age%> years <br> Location :
+                                            <%=results[0].Location%>
 
                                 </h3>
 
@@ -115,7 +118,7 @@
                         <div class="col col-lg-3 col-md-3 col-sm-6">
                             <div class="widget about-widget">
                                 <div class="logo widget-title">
-                                    <img src="Images/Ruhaanlogo1.png" alt="blog">
+                                    <img src="/Images/Ruhaanlogo1.png" alt="blog">
                                 </div>
                                 <p>Connecting Clubs with Children for Society Welfare. </p>
                                 <ul>
@@ -202,22 +205,22 @@
                                 </div>
                                 <ul class="d-flex">
                                     <li>
-                                        <a href="#"><img src="Images/6.jpg" alt=""></a>
+                                        <a href="#"><img src="/Images/6.jpg" alt=""></a>
                                     </li>
                                     <li>
-                                        <a href="#"><img src="Images/5.jpg" alt=""></a>
+                                        <a href="#"><img src="/Images/5.jpg" alt=""></a>
                                     </li>
                                     <li>
-                                        <a href="#"><img src="Images/4.jpg" alt=""></a>
+                                        <a href="#"><img src="/Images/4.jpg" alt=""></a>
                                     </li>
                                     <li>
-                                        <a href="#"><img src="Images/3.jpg" alt=""></a>
+                                        <a href="#"><img src="/Images/3.jpg" alt=""></a>
                                     </li>
                                     <li>
-                                        <a href="#"><img src="Images/2.jpg" alt=""></a>
+                                        <a href="#"><img src="/Images/2.jpg" alt=""></a>
                                     </li>
                                     <li>
-                                        <a href="#"><img src="Images/1.jpg" alt=""></a>
+                                        <a href="#"><img src="/Images/1.jpg" alt=""></a>
                                     </li>
                                 </ul>
                             </div>
@@ -238,7 +241,7 @@
         </footer>
         <!-- end tp-site-footer -->
     </div>
-    <script src="JavaScripts/singlechild.js"></script>
+    <script src="/JavaScripts/singlechild.js"></script>
 </body>
 
 </html>
