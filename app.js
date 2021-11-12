@@ -123,7 +123,7 @@ app.post('/Login', async(req, res) => {
             sessions = req.session;
             sessions.userid = req.body.Club.Email;
 
-            res.render("Club", { results });
+            res.render("singleClub", { results });
         } else {
             res.render("Login");
         }
@@ -160,18 +160,16 @@ app.get("/SingleClub/:id", (req, res) => {
 
 app.post('/registers', async(req, res) => {
 
-    const { name, email, pass1, pass2 } = req.body.register;
-    console.log(email);
-    if (pass1 == pass2) {
-        pool.query(`INSERT INTO register VALUES ('${name}','${email}','${pass1}')`, function(err, result, fields) {
-            if (err) {
-                console.log(err);
-            }
-            console.log('Done') //  const results = Object.values(JSON.parse(JSON.stringify(result)));
-                //     //console.log(results[0].Name);
-        })
-    }
-    res.render("register");
+    const { name, email, about, pass1, pass2 } = req.body.register;
+
+    pool.query(`INSERT INTO clubs VALUES ('${name}','${email}','${pass1}','Images/club1.jpg','${about}','Images/club1.jpg')`, function(err, result, fields) {
+        if (err) {
+            console.log(err);
+        }
+        console.log('Done')
+    })
+
+    res.redirect("/");
 });
 
 app.post('/search', async(req, res) => {
@@ -192,14 +190,14 @@ app.post('/newsletter1', async(req, res) => {
 
     const { email } = req.body.newsletter2;
     console.log(email);
-    pool.query(`INSERT INTO SITECHECK VALUES ('${email}')`, function(err, result, fields) {
+    pool.query(`INSERT INTO newsletter VALUES ('${email}')`, function(err, result, fields) {
         if (err) {
             console.log(err);
         }
         console.log('Done') //  const results = Object.values(JSON.parse(JSON.stringify(result)));
             //     //console.log(results[0].Name);
     })
-    res.render("newsletter1");
+    res.redirect("/");
 });
 
 app.post('/chatbot', async(req, res) => {
