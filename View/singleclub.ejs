@@ -21,8 +21,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="StyleSheets/singleclub.css" type="text/css" media="all">
-    <link rel="stylesheet" href="StyleSheets/Common.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/StyleSheets/singleclub.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/StyleSheets/Common.css" type="text/css" media="all">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
 
 </head>
@@ -30,13 +30,13 @@
 <body style="background-color:#b9d5fd; font-family:Garamond">
     <header>
         <div class="topnav fixed-top" id="myTopnav">
-            <a href="index" class="active"><img src="Images/Ruhaanlogo1.png" width=40px height=40px></a>
-            <a href="about">About</a>
-            <a href="club">Clubs</a>
-            <a href="children">Children</a>
-            <a href="blog">Blog</a>
-            <a href="login">Login/Register</a>
-            <a href="contactus">Contact Us</a>
+            <a href="/" class="active"><img src="/Images/Ruhaanlogo1.png" width=40px height=40px></a>
+            <a href="/about">About</a>
+            <a href="/club">Clubs</a>
+            <a href="/children">Children</a>
+            <a href="/blog">Blog</a>
+            <a href="/login">Login/Register</a>
+            <a href="/contactus">Contact Us</a>
             <a href="javascript:void(0);" class="icon" onclick="NavFunction()">
                 <i class="fa fa-bars"></i>
             </a>
@@ -53,21 +53,16 @@
                     <div class="tp-tp-blog-content clearfix">
                         <div class="post">
                             <div class="entry-media">
-                                <img id="im" src="club3.jpg" alt>
+                                <img id="im" src="/<%=results[0].SingleSource%>" alt>
 
                             </div> <br><br>
                             <center>
                                 <h2>Name of Club:
-                                    <% if(results) {%>
-                                        <%=results[0].Name%>
-                                            <%     } else{ %> Smile
-                                                <% } %>
+                                    <%=results[0].Name%>
                                 </h2><br>
                                 <h3>Email
-                                    <% if(results) {%>
-                                        <%=results[0].Email%>
-                                            <%     } else{ %> Smile@Smile.com
-                                                <% } %>
+                                    <%=results[0].Email%>
+
                                 </h3>
                                 <button class="btn">Click for Details</button></center>
                             <div id="div2" class="font">
@@ -207,11 +202,11 @@
                                     <h3>Useful Links</h3>
                                 </div>
                                 <ul>
-                                    <li><a href="about">About Us</a></li>
-                                    <li><a href="club">Clubs</a></li>
-                                    <li><a href="children">Children</a></li>
-                                    <li><a href="blog">Blogs</a></li>
-                                    <li><a href="contactus">Contact Us</a></li>
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/club">Clubs</a></li>
+                                    <li><a href="/children">Children</a></li>
+                                    <li><a href="/blog">Blogs</a></li>
+                                    <li><a href="/contactus">Contact Us</a></li>
 
                                 </ul>
                             </div>
@@ -281,7 +276,7 @@
         </footer>
         <!-- end tp-site-footer -->
     </div>
-    <script src="JavaScripts/singleclub.js"></script>
+    <script src="/JavaScripts/singleclub.js"></script>
 </body>
 
 </html>

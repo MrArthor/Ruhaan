@@ -84,19 +84,20 @@
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="<%= club.Source %>" alt="Avatar" style="width:300px;height:300px;">
+                                <% console.log(Clubs[club].Name)%>
+                                    <img src="<%= Clubs[club].Source %>" alt="Avatar" style="width:300px;height:300px;">
                             </div>
                             <div class="flip-card-back" style="background-color:#071739 !important;                "><br><br>
                                 <h1>
-                                    <%= club.Name %>
+                                    <%= Clubs[club].Name %>
                                 </h1>
                                 <p>
-                                    <%= club.About %>
+                                    <%= Clubs[club].About %>
                                 </p>
-                                <a href="singleclub/<%= club.Name %>" title="Connect with <%= club.Name %> " class="example" id="myTooltip">
+                                <a href="singleclub/<%= Clubs[club].Name %>" title="Connect with <%= Clubs[club].Name %> " class="example" id="myTooltip">
                                     <div id="div1" class="fa"></div>
                                 </a>
-                                <a href="singleclub/<%= club.Name %>" title="More info" class="example" id="myTooltip">
+                                <a href="singleclub/<%= Clubs[club].Name %>" title="More info" class="example" id="myTooltip">
                                     <div class="plus-sign"><i class="bi bi-plus"></i>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
@@ -108,8 +109,10 @@
                         </div>
                     </div>
                 </div>
+                <br>
+                <% } %>
         </div>
-        <% } %>
+
 
     </div>
 

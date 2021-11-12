@@ -67,13 +67,11 @@ app.get("/about", async(req, res) => {
     res.render("About");
 });
 app.get("/Club", (req, res) => {
-    pool.query(`select * from sitecheck`, function(err, result, fields) {
+    pool.query(`select * from clubs`, function(err, result, fields) {
             if (err) {
                 console.log(err);
             }
             const Clubs = Object.values(JSON.parse(JSON.stringify(result)));
-
-            console.log(Clubs);
             if (Clubs != null) {
                 res.render("Club", { Clubs });
             }
@@ -133,8 +131,20 @@ app.get("/SingleChild", (req, res) => {
 app.get("/register", (req, res) => {
     res.render("register");
 });
-app.get("/SingleClub", (req, res) => {
-    res.render("SingleClub");
+app.get("/SingleClub/:id", (req, res) => {
+    const id = req.params.id;
+    console.log(id);
+    pool.query(`select * from clubs where name='${id}'`, function(err, result, fields) {
+        if (err) {
+            console.log(err);
+        }
+        const results = Object.values(JSON.parse(JSON.stringify(result)));
+        if (results != null) {
+            res.render("singleclub", { results });
+        } else {
+            res.send("Club Not Found")
+        }
+    })
 });
 
 app.post('/registers', async(req, res) => {
