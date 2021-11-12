@@ -53,21 +53,23 @@
         <a href="club">Clubs</a>
         <a href="children">Children</a>
         <a href="blog">Blog</a>
-        <a href="login">Login/Register</a>
-        <a href="contactus">Contact Us</a>
-        <div id="myOverlay" class="overlay">
-            <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
-            <div class="overlay-content">
-                <form action="/action_page.php" action="search" method="POST">
-                    <input type="text" placeholder="Search.." name="searchbox[search]">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
+
+        <% console.log(CurrentUser) %>
+            <a href="login">Login/Register</a>
+            <a href="contactus">Contact Us</a>
+            <div id="myOverlay" class="overlay">
+                <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+                <div class="overlay-content">
+                    <form action="/action_page.php" action="search" method="POST">
+                        <input type="text" placeholder="Search.." name="searchbox[search]">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
             </div>
-        </div>
-        <button class="openBtn" onclick="openSearch()">Open Search Box</button>
-        <a href="javascript:void(0);" class="icon" onclick="NavFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
+            <button class="openBtn" onclick="openSearch()">Open Search Box</button>
+            <a href="javascript:void(0);" class="icon" onclick="NavFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
     </div>
 
 

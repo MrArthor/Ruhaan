@@ -17,7 +17,11 @@ const ExpressError = require("./utils/ExpressError");
 const methodOverride = require("method-override");
 const app = express();
 app.use(cookieParser());
+app.use((req, res, next) => {
+    res.locals.CurrentUser = req.user;
 
+    next();
+})
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
     extended: true
@@ -49,10 +53,7 @@ app.use(session(SessionConfig));
 
 
 app.get("/", async(req, res) => {
-
-
-    // send records as a response
-    res.render("home"); // render == view/home.ejs
+    res.render("home");
 
 });
 app.get("/about", async(req, res) => {
@@ -137,17 +138,16 @@ var sessions
 app.post('/Login', async(req, res) => {
 
     const { Email, Password } = req.body.Club;
-    console.log(Email, Password);
     pool.query(`select * from clubs where Email='${Email}' and Password='${Password}'`, function(err, result, fields) {
         if (err) {
             console.log(err);
         }
-        console.log('Done')
         const results = Object.values(JSON.parse(JSON.stringify(result)));
         if (results != null) {
             sessions = req.session;
             sessions.userid = req.body.Club.Email;
-
+            res.locals.CurrentUser = sessions.userid;
+            console.log(res.locals);
             res.render("singleClub", { results });
         } else {
             res.render("Login");
