@@ -57,18 +57,18 @@
                                 </div>
                                 <ul class="entry-meta">
                                     <br>
-                                    <li><a href="/singleblog/<%= blog.Title %>"> By <%= blog.Author %> </a></li>
-                                    <li><a href="/singleblog/<%= blog.Title %>"><i class="ti-calendar"></i> <%= blog.Date %></a></li>
+                                    <li><a href="singleblog/<%=blog.Id%>"> By <%= blog.Author %> </a></li>
+                                    <li><a href="singleblog/<%=blog.Id%>"><i class="ti-calendar"></i> <%= blog.Date %></a></li>
                                 </ul>
                                 <h3>
-                                    <a href="/singleblog/<%= blog.Title %>">
+                                    <a href="singleblog/<%=blog.Id%>">
                                         <%= blog.Title %>
                                     </a>
                                 </h3>
                                 <p>
                                     <%= blog.Brief %>
                                 </p>
-                                <a href="/singleblog/<%= blog.Title %>" class="read-more">Read More...</a>
+                                <a href="singleblog/<%=blog.Id%>" class="read-more">Read More...</a>
                             </div>
 
                             <%}%>
@@ -109,7 +109,7 @@
                                     </div>
                                     <div class="details">
                                         <h4>
-                                            <a href="singleblog/<%=blog.Title%>">
+                                            <a href="singleblog/<%=blog.Id%>">
 
                                                 <%=blog.Title%>
                                             </a>

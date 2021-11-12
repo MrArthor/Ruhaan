@@ -92,15 +92,16 @@ app.get("/Login", (req, res) => {
 
     res.render("Login");
 });
-app.get("/singleblog/:id", (req, res) => {
-    const id = req.params.id;
-    pool.query(`select * from Blogs where Title='${id}'`, function(err, result, fields) {
+app.get("/singleblog/:Title", (req, res) => {
+    const id = req.params.Title;
+    //   console.log(id);
+    pool.query(`select * from Blogs where Id = '${id}'`, function(err, Data, fields) {
         if (err) {
             console.log(err);
         }
-        const results = Object.values(JSON.parse(JSON.stringify(result)));
-        if (result != null) {
-            console.log(result);
+        const results = Object.values(JSON.parse(JSON.stringify(Data)));
+        if (Data != null) {
+            //console.log(result);
             res.render("singleblog", { results });
         } else {
             res.send("Blog Not Found")
