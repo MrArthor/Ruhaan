@@ -81,8 +81,16 @@ app.get("/Club", (req, res) => {
 app.get("/Children", (req, res) => {
     res.render("Children");
 });
-app.get("/Blog", (req, res) => {
-    res.render("Blog");
+app.get("/Blog", async(req, res) => {
+    pool.query(`select * from Blogs`, function(err, result, fields) {
+        if (err) {
+            console.log(err);
+        }
+        const Blogs = Object.values(JSON.parse(JSON.stringify(result)));
+        if (Blogs != null) {
+            res.render("Blog", { Blogs });
+        }
+    })
 });
 app.get("/Contactus", (req, res) => {
     res.render("Contactus");
@@ -110,12 +118,10 @@ app.post('/Login', async(req, res) => {
             sessions = req.session;
             sessions.userid = req.body.Club.Email;
 
-            res.render("SingleClub", { results });
+            res.render("Club", { results });
         } else {
             res.render("Login");
         }
-
-
     });
 
 
